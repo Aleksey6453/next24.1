@@ -93,6 +93,11 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
 }
 
 a {
@@ -105,3 +110,118 @@ a {
     color-scheme: dark;
   }
 }
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.title {
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.image{
+  width: 40%;
+}
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: black;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 16px;
+  padding: 15px 40px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Century Gothic;
+  font-weight: 700;
+  color: white;
+  transition: all 1s;
+}
+.btn:hover {
+    text-decoration: none;
+    transition: all .8s;
+    font-weight: bolder;
+    border: 3px solid black;
+    color: black;
+    background-color: white;
+}
+.btn:active {
+  background-color: #1E1F1C;
+  border: 2px solid white;
+  color: white;
+  border-radius: 15px;
+}
+
+.block{
+  box-sizing: border-box;
+  padding: 20px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gorizontal {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.header{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: black;
+
+}
+
+.linkHeader {
+  margin: 20px;
+  cursor: pointer;
+  transition: all 2s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.linkHeader:hover{
+  letter-spacing: 2rem;
+}
+
+.footer{
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+

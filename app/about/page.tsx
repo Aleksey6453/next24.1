@@ -5,8 +5,8 @@ export const metadata = {
 
 export default function About(){
     return (
-        <div>
-            <h1>
+        <div className="wrapPage">
+            <h1 className="title">
                 About
             </h1>
         </div>
