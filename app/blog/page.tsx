@@ -5,8 +5,12 @@ import Link from 'next/link'
 //     description: 'Blog page',
 //   }
 
-async function getData(params:type) {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+async function getData() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        next: {
+            revalidate: 60
+        }
+    })
 
     return response.json()
 }

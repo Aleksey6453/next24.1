@@ -1,3 +1,15 @@
+async function getData(id: string) {
+    const response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${id}`,
+         {
+        next: {
+            revalidate: 60
+        }
+    })
+
+    return response.json()
+}
+
 type Props = {
     params: {
         id: string
@@ -10,12 +22,17 @@ export function generateMetadata({params: {id}}: Props ){
     }
 }
 
-export default function Post( {params: {id}} : Props ){
+export default async function Post( {params: {id}} : Props ){
+    const post = await getData(id)
+
     return (
         <div className="wrapPage">
             <h1 className="title">
-               Post № {id}
+               {post.title}
             </h1>
+            <p>
+                {post.body}
+            </p>
         </div>
     )
 }
