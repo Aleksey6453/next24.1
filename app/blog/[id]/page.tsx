@@ -16,9 +16,10 @@ type Props = {
     }
 }
 
-export function generateMetadata({params: {id}}: Props ){
+export async function generateMetadata({params: {id}}: Props ){
+    const post = await getData(id)
     return {
-        title: id
+        title: post.title
     }
 }
 
