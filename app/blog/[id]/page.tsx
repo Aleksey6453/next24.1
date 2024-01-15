@@ -25,6 +25,7 @@ export async function generateMetadata({params: {id}}: Props ){
 
 export default async function Post( {params: {id}} : Props ){
     const post = await getData(id)
+   
 
     return (
         <div className="wrapPage">
