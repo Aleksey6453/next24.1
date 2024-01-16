@@ -16,7 +16,7 @@ async function getData() {
 }
 
 export const metadata: Metadata = {
-    ttitle: 'Blog | Next App'
+    title: 'Blog | Next App'
 }
 
 export default async function Blog(){
