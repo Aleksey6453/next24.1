@@ -1,5 +1,5 @@
 import {Metadata} from 'next'
-import Link from 'next/link'
+import Link from '@/node_modules/next/link'
 // export const metadata = {
 //     title: 'Blog page',
 //     description: 'Blog page',

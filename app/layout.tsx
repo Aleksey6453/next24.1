@@ -1,4 +1,4 @@
-import type { Metadata } from "@/node_modules/next/link"
+import type { Metadata } from "@/node_modules/next"
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from "./components/Header"
