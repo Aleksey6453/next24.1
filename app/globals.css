@@ -227,6 +227,14 @@ a {
   margin: 10px;
 }
 
+.lime{
+  color: lime;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 2s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .custom-loader {
   width:100px;
   height:100px;
