@@ -4,6 +4,7 @@ import { Navigation } from "./Navigation"
 const navItems = [
     {label: 'Home', href: '/'},
     {label: 'Blog', href: '/blog'},
+    {label: 'Blogg', href: '/blogg'},
     {label: 'About', href: '/about'},
 ]
 

@@ -1,9 +1,7 @@
-import {Metadata} from 'next'
+import {Metadata} from "next"
 import Link from '@/node_modules/next/link'
-// export const metadata = {
-//     title: 'Blog page',
-//     description: 'Blog page',
-//   }
+import { usePosts } from "../store/index"
+
 
 async function getData() {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -21,6 +19,8 @@ export const metadata: Metadata = {
 
 export default async function Blog(){
     const posts = await getData()
+
+    
 
     return (
         <div className="wrapPage">
