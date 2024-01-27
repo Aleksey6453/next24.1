@@ -1,6 +1,7 @@
+// 'use client'
 import {Metadata} from "next"
 import Link from '@/node_modules/next/link'
-import { usePosts } from "../store/index"
+// import { usePosts } from "../store/index"
 
 
 async function getData() {
@@ -9,6 +10,8 @@ async function getData() {
             revalidate: 60
         }
     })
+
+    if (!response.ok) throw new Error('Unable to fetch posts')
 
     return response.json()
 }
