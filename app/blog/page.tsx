@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { getAllPosts } from "../services/getPosts"
 import { Posts } from "../components/Posts"
 import PostSearch from "../components/PostSearch"
+import { usePosts } from "../store/index"
+import { shallow } from 'zustand/shallow'
 
 
 // export const metadata: Metadata = {
@@ -12,21 +14,31 @@ import PostSearch from "../components/PostSearch"
 
 export default function Blog(){
 
-    const [posts, setPosts] = useState<any[]>([])
-    const [loading, setLoading] = useState(true)
+    const [posts, loading, getAllPosts] = usePosts((state) => [
+        state.posts, 
+        state.loading, 
+        state.getAllPosts
+    ], shallow)
 
-    useEffect(()=>{
+    useEffect(() => {
         getAllPosts()
-            .then(setPosts)
-            .finally(() => setLoading(false))
-    }, [])
+    }, [getAllPosts])
+
+    // const [posts, setPosts] = useState<any[]>([])
+    // const [loading, setLoading] = useState(true)
+
+    // useEffect(()=>{
+    //     getAllPosts()
+    //         .then(setPosts)
+    //         .finally(() => setLoading(false))
+    // }, [])
    
     return (
         <div className="wrapPage">
             <h1 className="title">
                Blog
             </h1>
-            <PostSearch onSearch={setPosts}/>
+            <PostSearch />
             {
                 loading ? (
                     <h3>Loading...</h3>
