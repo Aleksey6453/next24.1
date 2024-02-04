@@ -1,28 +1,26 @@
-'use client'
-// import { Metadata } from "next"
-import { useEffect, useState } from "react"
-import { getAllPosts } from "../services/getPosts"
+// 'use client'
+import { Metadata } from "next"
+
 import { Posts } from "../components/Posts"
-import PostSearch from "../components/PostSearch"
-import { usePosts } from "../store/index"
-import { shallow } from 'zustand/shallow'
+import { PostSearch } from "../components/PostSearch"
 
 
-// export const metadata: Metadata = {
-//     title: 'Blog | Next App'
-// }
+
+export const metadata: Metadata = {
+    title: 'Blog | Next App'
+}
 
 export default function Blog(){
 
-    const [posts, loading, getAllPosts] = usePosts((state) => [
-        state.posts, 
-        state.loading, 
-        state.getAllPosts
-    ], shallow)
+    // const [posts, loading, getAllPosts] = usePosts((state) => [
+    //     state.posts, 
+    //     state.loading, 
+    //     state.getAllPosts
+    // ], shallow)
 
-    useEffect(() => {
-        getAllPosts()
-    }, [getAllPosts])
+    // useEffect(() => {
+    //     getAllPosts()
+    // }, [getAllPosts])
 
     // const [posts, setPosts] = useState<any[]>([])
     // const [loading, setLoading] = useState(true)
@@ -39,13 +37,14 @@ export default function Blog(){
                Blog
             </h1>
             <PostSearch />
-            {
+            <Posts />
+            {/* {
                 loading ? (
                     <h3>Loading...</h3>
                 ) : (
                     <Posts posts={posts}/>
                 )
-            }
+            } */}
            
         </div>
     )
